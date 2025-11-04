@@ -1,25 +1,4 @@
-// Develop a Java program to create a class Bank that maintains two kinds of account for its
-// customers, one called savings account and the other current account. The savings account provides
-// compound interest and withdrawal facilities but no cheque book facility. The current account
-// provides cheque book facility but no interest. Current account holders should also maintain a
-// minimum balance and if the balance falls below this level, a service charge is imposed.
-
-// Create a class Account that stores customer name, account number and type of account. From this
-// derive the classes Cur-acct and Sav-acct to make them more specific to their requirements. Include
-// the necessary methods in order to achieve the following tasks:
-
-// a)Accept deposit from customer and update the balance.
-
-// b)Display the balance.
-
-// c)Compute and deposit interest
-
-// d)Permit withdrawal and update the balance
-
-// e) Check for the minimum balance, impose penalty if necessary and update the balance.
 import java.util.Scanner;
-
-// Base Class
 class Account {
     String customerName;
     int accountNumber;
@@ -45,7 +24,6 @@ class Account {
     }
 }
 
-// Savings Account
 class Sav_acct extends Account {
     void deposit() {
         Scanner s = new Scanner(System.in);
@@ -78,9 +56,8 @@ class Sav_acct extends Account {
     }
 }
 
-// Current Account
 class Cur_acct extends Account {
-    final double minBalance = 500;  // minimum required balance
+    final double minBalance = 500;  
     final double serviceCharge = 100;
 
     void deposit() {
@@ -110,7 +87,6 @@ class Cur_acct extends Account {
     }
 }
 
-// Main class
 public class MainBank {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
@@ -181,4 +157,5 @@ public class MainBank {
             }
         } while (choice != 5);
     }
+
 }
